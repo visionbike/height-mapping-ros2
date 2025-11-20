@@ -1,0 +1,21 @@
+height_mapping_node:
+  ros__parameters:
+    lidar_topic: "/velodyne/points"
+    rgbd_topic: "/sensor_processor/points"
+    pose_update_rate: 15.0
+    map_publish_rate: 15.0
+    remove_backward_points: true
+    debug_mode: false
+
+    frame_id:
+      robot: "base_link"
+      map: "map"
+
+    height_mapper:
+      height_estimator: "StatMean"  # "StatMean", "KalmanFilter", "MovingAverage"
+      frame_id: "map"
+      map_length_x: 10.0
+      map_length_y: 10.0
+      grid_resolution: 0.1
+      min_height_threshold: -0.2
+      max_height_threshold: 2.0
